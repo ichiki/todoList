@@ -1,0 +1,26 @@
+<% layout('layout') -%>
+<div class="container" ng-controller="TodoCtrl as todos">
+    <div class="jumbotron">
+        <h1 align="center">Todo Application</h1>
+        <br>
+        <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+                
+            </div>
+        </div>
+    </div>
+    <form ng-submit='addTodo()'>
+      <input type='text' ng-model='newTodo.value'>
+      <input type='submit' value='add'>
+    </form>
+    <div id="todo-list" class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="checkbox" ng-repeat="singleTodo in todos">
+                <label>
+                    <input type="checkbox" ng-click="removeTodo(singleTodo)">
+                    {{ singleTodo.value }}
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
