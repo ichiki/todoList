@@ -12,9 +12,9 @@ module.exports = {
       next(todo);
     });
   },
-  removeTodo: function(id, next) {
+  removeTodo: function(todoVal, next) {
     // need to insert id
-    Todo.destroy(id).exec(function(err, todo) {
+    Todo.destroy({value: todoVal}).exec(function(err, todo) {
       if(err) throw err;
       next(todo);
     });

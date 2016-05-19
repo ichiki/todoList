@@ -9,9 +9,9 @@
             </div>
         </div>
     </div>
-    <form ng-submit='addTodo()'>
-      <input type='text' ng-model='newTodo.value'>
-      <input type='submit' value='add'>
+    <form name='addForm' ng-submit='addTodo()' novalidate>
+      <input type='text' ng-model='newTodo.value' ng-required='true'>
+      <input type='submit' value='add' ng-disabled='addForm.$invalid'>
     </form>
     <div id="todo-list" class="row">
         <div class="col-sm-4 col-sm-offset-4">
