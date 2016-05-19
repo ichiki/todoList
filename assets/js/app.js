@@ -23,8 +23,8 @@ todoApp.controller('TodoCtrl', ['$scope', '$rootScope', 'TodoService', function(
 
   $scope.addTodo = function() {
     TodoService.addTodo($scope.newTodo).then(function(response) {
-      console.log($scope.newTodo);
-      $scope.todos.push($scope.newTodo);
+      console.log(response);
+      $scope.todos.push(response);
       $scope.newTodo = {value: ''};
     });
   }
